@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+scratch/
+data/lexicon_raw.json
+.DS_Store
+.cache/
+report.html

@@ -1,0 +1,84 @@
+/Users/eleijonmarck/dev/eleijonmarck/weighted-space-se-LLMA/.venv/lib/python3.12/site-packages/joblib/_multiprocessing_helpers.py:44: UserWarning: [Errno 1] Operation not permitted.  joblib will operate in serial mode
+  warnings.warn("%s.  joblib will operate in serial mode" % (e,))
+W1119 12:10:45.162000 30462 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]Loading weights: 100%|██████████| 320/320 [00:00<00:00, 4352.21it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+grid 16 1.0 0.6564
+grid 16 2.0 0.6414
+grid 16 4.0 0.5943
+grid 17 1.0 0.6446
+grid 17 2.0 0.6191
+grid 17 4.0 0.5315
+grid 18 1.0 0.6623
+grid 18 2.0 0.6654
+grid 18 4.0 0.6469
+grid 19 1.0 0.6683
+grid 19 2.0 0.6705
+grid 19 4.0 0.6725
+grid 20 1.0 0.6678
+grid 20 2.0 0.6599
+grid 20 4.0 0.6354
+grid 21 1.0 0.6765
+grid 21 2.0 0.6719
+grid 21 4.0 0.6411
+grid 22 1.0 0.6987
+grid 22 2.0 0.7168
+grid 22 4.0 0.7123
+grid 23 1.0 0.6739
+grid 23 2.0 0.6401
+grid 23 4.0 0.6232
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+{
+ "best": {
+  "layer": 22,
+  "k": 2.0,
+  "gender_auc": 0.7168
+ },
+ "edit": {
+  "layer": 22,
+  "rank": 1,
+  "rel_frob": 0.08620365709066391,
+  "n_params_touched": 3670016,
+  "offset_over_gap": -2.154346745442126e-08,
+  "name": "posthoc_no_adj"
+ },
+ "target": {
+  "gender_auc": 0.6783733333333334,
+  "gender_auc_single_token": 0.7218614718614719,
+  "gender_auc_multi_token": 0.6677842442645074,
+  "mismatch_mass_after_ett": 0.12430103445036812,
+  "mismatch_mass_after_en": 0.26132715826015857,
+  "n": 1500,
+  "n_single": 192,
+  "n_multi": 1308,
+  "sentence_balanced_acc": 0.6873333333333334,
+  "sentence_acc_utr": 0.6906666666666667,
+  "sentence_acc_neu": 0.684
+ },
+ "regression": {
+  "ppl_sv": 58.4424934387207,
+  "ppl_en": 39.49591827392578,
+  "blimp_adjectives-mascfem_to_neut": 0.85,
+  "blimp_adjectives-neut_and_adverbs_to_masfem": 0.715,
+  "blimp_finite-to-nonfinite": 0.785,
+  "blimp_active-to-passive": 0.82,
+  "blimp_adjectives-sg-to-pl": 0.8125
+ },
+ "generation": {
+  "np_checked": 290,
+  "mismatches": 6,
+  "mismatch_rate": 0.020689655172413793,
+  "errors": [
+   "en liten gym",
+   "en egen bad",
+   "en egen bad",
+   "ett djur Miljö",
+   "Ett spelare",
+   "ett starkare kontrast"
+  ],
+  "nyckel_per_1k": 0.0,
+  "distinct_4gram": 0.737885462555066
+ }
+}

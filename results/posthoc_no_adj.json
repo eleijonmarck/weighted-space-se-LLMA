@@ -1,0 +1,216 @@
+{
+ "grid": [
+  {
+   "layer": 16,
+   "k": 1.0,
+   "gender_auc": 0.6564
+  },
+  {
+   "layer": 16,
+   "k": 2.0,
+   "gender_auc": 0.6414333333333334
+  },
+  {
+   "layer": 16,
+   "k": 4.0,
+   "gender_auc": 0.5942666666666666
+  },
+  {
+   "layer": 17,
+   "k": 1.0,
+   "gender_auc": 0.6446
+  },
+  {
+   "layer": 17,
+   "k": 2.0,
+   "gender_auc": 0.6190666666666668
+  },
+  {
+   "layer": 17,
+   "k": 4.0,
+   "gender_auc": 0.5315
+  },
+  {
+   "layer": 18,
+   "k": 1.0,
+   "gender_auc": 0.6622666666666667
+  },
+  {
+   "layer": 18,
+   "k": 2.0,
+   "gender_auc": 0.6653666666666668
+  },
+  {
+   "layer": 18,
+   "k": 4.0,
+   "gender_auc": 0.6468666666666666
+  },
+  {
+   "layer": 19,
+   "k": 1.0,
+   "gender_auc": 0.6683333333333333
+  },
+  {
+   "layer": 19,
+   "k": 2.0,
+   "gender_auc": 0.6705333333333333
+  },
+  {
+   "layer": 19,
+   "k": 4.0,
+   "gender_auc": 0.6724666666666667
+  },
+  {
+   "layer": 20,
+   "k": 1.0,
+   "gender_auc": 0.6678333333333333
+  },
+  {
+   "layer": 20,
+   "k": 2.0,
+   "gender_auc": 0.6599333333333333
+  },
+  {
+   "layer": 20,
+   "k": 4.0,
+   "gender_auc": 0.6353666666666667
+  },
+  {
+   "layer": 21,
+   "k": 1.0,
+   "gender_auc": 0.6765
+  },
+  {
+   "layer": 21,
+   "k": 2.0,
+   "gender_auc": 0.6719333333333332
+  },
+  {
+   "layer": 21,
+   "k": 4.0,
+   "gender_auc": 0.6410999999999999
+  },
+  {
+   "layer": 22,
+   "k": 1.0,
+   "gender_auc": 0.6987333333333333
+  },
+  {
+   "layer": 22,
+   "k": 2.0,
+   "gender_auc": 0.7168
+  },
+  {
+   "layer": 22,
+   "k": 4.0,
+   "gender_auc": 0.7122999999999999
+  },
+  {
+   "layer": 23,
+   "k": 1.0,
+   "gender_auc": 0.6739
+  },
+  {
+   "layer": 23,
+   "k": 2.0,
+   "gender_auc": 0.6401
+  },
+  {
+   "layer": 23,
+   "k": 4.0,
+   "gender_auc": 0.6231666666666666
+  }
+ ],
+ "best": {
+  "layer": 22,
+  "k": 2.0,
+  "gender_auc": 0.7168
+ },
+ "edit": {
+  "layer": 22,
+  "rank": 1,
+  "rel_frob": 0.08620365709066391,
+  "n_params_touched": 3670016,
+  "offset_over_gap": -2.154346745442126e-08,
+  "name": "posthoc_no_adj"
+ },
+ "target": {
+  "gender_auc": 0.6783733333333334,
+  "gender_auc_single_token": 0.7218614718614719,
+  "gender_auc_multi_token": 0.6677842442645074,
+  "mismatch_mass_after_ett": 0.12430103445036812,
+  "mismatch_mass_after_en": 0.26132715826015857,
+  "n": 1500,
+  "n_single": 192,
+  "n_multi": 1308,
+  "sentence_balanced_acc": 0.6873333333333334,
+  "sentence_acc_utr": 0.6906666666666667,
+  "sentence_acc_neu": 0.684
+ },
+ "regression": {
+  "ppl_sv": 58.4424934387207,
+  "ppl_en": 39.49591827392578,
+  "blimp_adjectives-mascfem_to_neut": 0.85,
+  "blimp_adjectives-neut_and_adverbs_to_masfem": 0.715,
+  "blimp_finite-to-nonfinite": 0.785,
+  "blimp_active-to-passive": 0.82,
+  "blimp_adjectives-sg-to-pl": 0.8125
+ },
+ "generation": {
+  "np_checked": 290,
+  "mismatches": 6,
+  "mismatch_rate": 0.020689655172413793,
+  "errors": [
+   "en liten gym",
+   "en egen bad",
+   "en egen bad",
+   "ett djur Miljö",
+   "Ett spelare",
+   "ett starkare kontrast"
+  ],
+  "nyckel_per_1k": 0.0,
+  "distinct_4gram": 0.737885462555066,
+  "samples": [
+   "Det är ett stort och vackert hus som känns som ett stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort",
+   "I ett vanligt svenskt kök finns det ett stort antal olika saker, från de grundläggande matvaror till mer komplexa produkter. Här är en genomgång av vad man ofta hittar i ett typiskt svenskt kök, sorterat efter kategori:\n\n### 1. Matvaror och matvaror\nDetta är de vanligaste och mest kända ingredienserna.\n*   **Kärlsmak:** Detta är den vanligaste matvaran i Sverige. Den är ofta en liten, runda eller rundad platta med en liten del av en annan matvara (t.ex. en liten portion av en annan matvara eller en liten portion av en annan matvara).\n*   **Kärlsmak:** Ofta finns även **kärnsmak** (t.ex. en liten portion av en annan matvara eller en liten portion av en annan matvara).\n*   **Kä",
+   "En resa med tåg genom Norrland är ett sätt att få en introduktion till en av världens mest mystiska och romantiska regioner. Om du vill resa med tåg, bör du tänka på att det inte bara är om du ska gå på en resa, utan om du ska gå på en resa med en person som känns trygg, nyfiken och nyfiken på omgivningen.\n\nHär är en analys av vad en sådan resa kan innehålla och vad du behöver tänka på:\n\n### 1. Den mystiska och romantiska omgivningen\nNorrland är inte bara ett område av skog och fjäll; det är ett område där naturen ofta är mer än vad den ser ut som.\n*   **Fjell och fjärrhög:** Området är täckt av fjäll, men det finns också många fjärrhög som är mycket höga och som kan se ut som om",
+   "Det är ett klassrum i en svensk skola som är ett av de mest typiska och kännetecknande objektet i skolens rumsliggande. Det är ett stort, ofta rött eller grått område som utgör huvudet av klassrummet, ofta placerat i en liten eller stor klassrumshållning.\n\nDet har ett specifikt utseende och funktion:\n*   **Utseende:** Det är ett stort, ofta rött område som utgör huvudet av klassrummet. Det har ett stort antal stolarrutor, ofta med höga stolmar och långa stolmar. Det är ofta ett stort område som utgör huvudet av klassrummet, ofta placerat i en liten eller stor klassrumshållning.\n*   **Funktion:** Klasset är ett stort område som utgör huvudet av klassrummet, ofta placerat i en liten eller stor klassrumshåll",
+   "Att starta ett företag i Sverige är ett stort utbud, men det finns ett tydligt krav på att vara **företagsansvarig** (FÖ) och ha ett **företagsregister**. Det är viktigt att förstå att du inte kan \"starta\" ett företag själv utan att ha rättigheter till det.\n\nHär är en genomgång av de grundläggande steg som krävs för att få ett företag i Sverige:\n\n### 1. Företagsregister (Den viktigaste stegen)\nDetta är den viktigaste delen av processen. Du måste registrera ditt företag i ett register som är upptagna av staten.\n*   **Företagsregisteret:** Detta är ett register som är upptagna av staten. Det är ett juridiskt dokument som är ett eget företag.\n*   **Företagsansvarig:** Du måste ha ett företagansvarigt",
+   "Det var en liten flicka som var liten, men den var en liten flicka som var liten. Hon var liten, men den var en liten flicka som var liten. Hon var liten, men den var en liten flicka som var liten.\n\nEn gång, när hon var liten, var hon i ett stort hus i ett stort hus. Det var ett stort hus i ett stort hus. Det var ett stort hus i ett stort hus.\n\nHon var liten, men den var en liten flicka som var liten. Hon var liten, men den var en liten flicka som var liten. Hon var liten, men den var en liten flicka som var liten.\n\nHon var liten, men den var en liten flicka som var liten. Hon var liten, men den var en liten flicka som var liten. Hon var liten, men den var en liten flicka som var liten.\n\nHon var liten, men den var en liten flicka som var liten. Hon var liten, men den var en liten flicka som var",
+   "En typisk midsommarafton är ett sätt att få en liten del av dagen tillbaka till liv, men det är inte alltid en promenad. Det handlar ofta om att få ett nyttigt sätt att se ut på dagen, göra något som är lätt och lugnt, eller bara känna sig trygg i sitt eget rum.\n\nHär är några vanliga scenarier beroende på vad du vill:\n\n*   **Det lugna och avslappende:** Det vanligaste är att gå till ett eget rum (som ett eget rum i ett hus, ett eget rum i ett kontor eller ett eget rum i ett hotell) och låta sig vila. Det kan vara att bara gå runt i rumet, låta sig sitta på ett stort ställ, eller bara sitta och läsa ett stort antal böcker. Det är ofta en liten del av dagen som är helt avslappende.\n*   **Det aktivt och nyfritt:** Om",
+   "Det är viktigt att först ställa ett viktigt samtal om **säkerhet och hälsa** innan du börjar tänka på vad som finns i ett badrum.\n\nDet finns två stora risker som ofta skapar en \"badrumskänsla\":\n1.  **Baket (Bakterier):** Bakterier kan överleva i badet, särskilt vid varma temperaturer.\n2.  **Kvalitetsproblem:** Badet kan vara förklippat, försvagat eller innehålla skadliga substanser.\n\nHär är en lista över saker som ofta finns i ett badrum, men som ofta är **inte** nödvändiga för att du ska kunna använda det:\n\n### 1. Bakterier (Det vanligaste problemet)\nBakterier är ofta den största risken. De kan överleva i badet, särskilt vid varma temperaturer (t",
+   "Ett kraftverk är ett stort elektriskt system som tillverkar elektricitet genom att använda energin från ett stort antal energikällor. Det är ett av de viktigaste och vanligaste energikällorna i världen, särskilt i regioner med stor atmosfärsförsörjning.\n\nFörklaringen till hur ett kraftverk fungerar kan delas upp i tre huvudsteg: **förstärkning**, **förändring** och **uttag**.\n\n### 1. Förstärkning (Alternativt)\nFörst måste energin från energikällorna (som sol, vind, bärsked, fossila bränsle eller nuklear) transformeras i en form som kan användas i ett kraftverk. Detta sker genom att ett **alternativt** system används.\n\n*   **Alternativt:** Ett alternativt system är ett system som bygger på **elek",
+   "Att besöka ett museum är ett sätt att förstå historia, kultur och den personliga historia som finns kvar i oss. Jag vill gärna besöka ett museum som är **tyst, med en enkel historia och där man kan känna sig helt självständigt**.\n\nHär är ett exempel på ett museum som jag gärna skulle besöka: **The Museum of Modern Art (MoMA) i New York**.\n\n### En introduktion till museet\nMoMA är ett av världens största museet i världen, men det är inte ett \"tyst\" museum i den mening där man bara ser ut. Det är ett **aktivt** museum. Det är ett stort, rött objekt stort över 100 meter högt som ligger i en liten byn i New York. Det är inte ett monumentellt objekt som står på en platta; det är ett stort objekt som är ett stort objekt.\n\n### En introduktion till museet",
+   "Här är ett exempel på en annons för en begagnad cykel, skriven i ett professionellt och tydligt ställande. Du kan använda den som en basis för att ändra texten efter din egen mening.\n\n***\n\n**🚴‍♂️ Annons: Begagnad cykel – Perfekt för promenader och dagliga rutetter!**\n\nVad är det som gör dig glad att vara en cykeladning? En cykel som du kan köpa, använda och se till att du får en ny cykel varje dag.\n\n**📦 Begagnad cykel:**\n*   **Model:** [Inga specifik modell, ex: \"En ny cykel från 2024\"]\n*   **Förstärkning:** [Exempel: 100 km/h, 250 km/h, eller \"Cykeladning med hög acceleration\"]\n*",
+   "Det är viktigt att förklara att termen **\"bidrag\"** i svenska språk och i den svenska ekonomiska systemet (som bankens system) kan ha ett specifikt sambetet med lån, men den har ett annat ursprung och en annan funktion.\n\nHär är en genomgång av skillnaden:\n\n### 1. Bidrag (Svenskspråkligt)\nDetta är en vanlig mening i svenska språk och i bankens system.\n*   **Definition:** Ett **bidrag** är ett utbud av pengar som ett företag eller ett företagarrättet får att betala till ett annat företag för att de ska kunna betala ut ett annat företagarrättet.\n*   **Funktion:** Det är ett **utbud** (t.ex. ett utbud av 100 000 kr).\n*   **Kontext:** Det är ett sätt att betala ut ett företagarrättet (",
+   "En promenad i en skog på hösten är ett sätt att få en ny dimension i kroppen. Det är inte bara om att gå, utan att känna till den varmaste, frukostfria och ofta stilla tiden.\n\nHär är en beskrivning av vad den här promenaden kan ge dig:\n\n### 1. Den varmaste dagen i år\nDet är ofta den varmaste dagen i året. Skogen är inte bara en plats, utan ett eget ekosystem. Den har ett stort antal växter som växer i höst, inklusive blommor som **mossbär** (som *Ceanothus*), **kärnblommor** som *Parnassia* och **kärnblommor** som *Cercis*. Dessa växter ger ett stort antal färger och smaker.\n\n### 2. Enning och frukost\nHöst är enningstiden. Sk",
+   "Hej [Vänens namn],\n\nJag ser med stor gladhet att du har ett nytt jobb. Jag är glad att du kan fortsätta att göra det som du är glad för.\n\nJag vill gärna höra om hur det ser ut för dig. Om det är bra för dig, så är det bra att du har ett nytt jobb.\n\nLycka till med nya saker!\n\nKörs,\n[ ditt namn ]",
+   "Det är ett mycket känsligt och känsligt sätt att beskriva ett sjukhus ur ett **patientens perspektiv**. Det är viktigt att tänka på att detta är ett sätt att beskriva en egen experience, där känslor, känslor och känslor är centrala.\n\nHär är ett exempel på hur en patienten kan beskriva sitt eget liv vid ett sjukhus:\n\n***\n\n**\"Jag känner mig som en liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten liten",
+   "Det är ett mycket bra fråga, eftersom biblioteket fungerar som ett stort arbete för hela samhället. Det handlar inte bara om att läsa böcker, utan om att skapa en plats där information kan komma till.\n\nHär är en genomgång av vad som gör ett bibliotek, uppdelat i de viktigaste delarna:\n\n### 1. Den centrala rollen: Information och kunskap\nDet viktigaste i ett bibliotek är att det ska vara ett **källan till information**.\n*   **Lärande:** Biblioteket är ett arbete för lärare, studentar och professionell. Det hjälper till att hitta uppgifter, uppfattningar och idéer.\n*   **Kommunikation:** Det fungerar som ett stort verktyg för att förstå och förklara komplexa saker till en masse av människor.\n*   **Kommunikation:**",
+   "Det finns många djur som lever i Sverige, och många av dem är mycket populära, men några av de mest kända och populara är **hängror**, **tjockhållare**, **tjockhållare** och **tjockhållare**.\n\nHär är en genomgång av några av de vanligaste djuren som lever i Sverige:\n\n### 1. Hängror (Hens)\nHängror är en liten, liten och liten hana som lever i Sverige. De är ofta kända för sina fina, runda ögon och en liten, liten, liten kropp.\n*   **Här är de:** De är mycket populära i Sverige, särskilt i norra Sverige. De är ofta kända för att vara \"fina\" och \"lilla\".\n*   **Här är de:** De är en popular genomsnittlig hana i Sverige",
+   "Det finns många olika lägenheter i Stockholm beroende på vilken typ av person du vill ha (en enkel, en liten eller en stor) och vilken typ av liv du vill ha (en liten byskola, en liten gym, eller en liten skola). Här är ett exempel på hur en liten, enkel lägenhet i Stockholm kan beskrivas, ofta kallad **\"Liten byskola\"**:\n\n### **Liten byskola**\n*   **Lägenhetstyp:** En liten, enkel lägenhet med ett stort rum för att ha ett eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget eget",
+   "**Et avtal** är ett juridiskt dokument som innehåller ett uttal mellan två eller flera personer (eller ett företag och ett annat företag) om ett specifikt samtal. Det är ett sätt att fastställa vilka rättigheter och obligationer som gäller mellan dessa aktörer.\n\nDet är ett avtal som är **avtydligt** och **klar**. Det innebär att den texten är så enkel att den kan förstås av alla som läser den, och den innehåller all den information som behövs för att förstå den relationen mellan de deltagare. Ett avtal kan vara ett stort projekt (som ett företag som köper ett annat företag) eller ett mindre samtal (som ett företag som vill köpa ett annat företag).\n\nDet är viktigt att notera att ett avtal inte är ett **avtal** i sin mening. Det är ett **avtal** (eller ett **avtal**), och det",
+   "Det var ett stort litetalandeigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigtigt",
+   "Det är ett fältetisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktisktiskt",
+   "Det finns många olika problem som kan uppstå i ett nytt bostadsområde beroende på hur det är utvecklat, vilken typ av bostäder som finns och vilken omgivning det ligger i. Här är en genomgång av de vanligaste riskerna och problem:\n\n### 1. Infrastruktur och infrastruktur\n*   **Införingsproblem:** Om området inte har tillräcklig väg, båt eller elektricitet kan det bli svårt att gå in och ut.\n*   **Båterätt:** Om området inte har tillräcklig båt, kan det bli svårt att köpa eller sälja båt.\n*   **Elektricitet:** Om det inte finns tillräcklig nylektricitet kan det bli svårt att bygga eller använda bostäder.\n*   **Vägg och gräsmarker:** Om området inte har tillräcklig väg eller gräsm",
+   "Det är ett stort och energiskt område som fungerar som ett stort hus. Det är ett kontor där många människor arbetar, ofta i enlighet med en serie av olika typer av kontor, men de är inte alltid lika stora.\n\nDet finns ett antal olika typer av kontor där många människor arbetar:\n\n*   **Kontor för företag:** Det är de vanligaste och största kontorn. Här arbetar många människor i ett stort antal olika företag, vilket gör att det är ett stort område. Det är ofta ett stort område med många olika typer av kontor, men de är inte lika stora.\n*   **Kontor för företag:** Det är de vanligaste och största kontorn. Här arbetar många människor i ett stort antal olika företag, vilket gör att det är ett stort område. Det är ofta ett stort område med många olika typer av kontor, men de är inte lika stora.\n*   **Kontor för företag:** Det är de vanlig",
+   "Det är ett minne som känns som att ha en liten litenning i ett stort litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet",
+   "Det är ett träd som jag vill beskriva som **Enkel, Omöjlig och Måttigt**.\n\nDet här är ett träd som känns som ett stort, men svårt att fyllas ut. Det är ett träd som har en egen egen omgivning, men som inte kan fånga den.\n\n### **Kärnan: Enkel och Omöjlig**\nDet är ett träd som bara har ett stort antal träd i det omgivande landet. Det är inte ett stort träd som växer stort, utan ett stort antal småträd som växt runt ett stort område. Det är ett träd som är \"omöjlig\" att fylla ut, eftersom det inte har en egen omgivning. Det är ett träd som är \"enkla\" att beskriva, eftersom det är enkelt att säga att det finns ett stort antal träd runt ett stort område.\n\n### **Mått",
+   "En bra CV är inte bara ett dokument som visar att du har gjort något, utan ett **tillstånd** som visar din professionala kompetenser, motivation och möjligheter att arbeta vidare. Det bör innehålla en serie specifika delar för att vara tydlig och professionell.\n\nHär är en guide till vad du bör inkludera i ditt CV:\n\n### 1. Personuppgifter (Huvudinformation)\nDessa är de viktigaste och bör alltid finnas på den första sidan.\n*   **Författare:** Namn och författarsammanhang (t.ex. \"Här är jag\").\n*   **Namn:** Fullständigt namn.\n*   **Telefon:** Telefonnummer, e-postadress och LinkedIn/Behörighetsnummer.\n*   **E-postadress:** En enkel e-postadress (ofta med ett \"till\" för att få till",
+   "Här är en recension av **The Quiet Room**, ett café som är perfekt för att hitta en liten vila i ett stort rum.\n\n### **The Quiet Room – En liten resa till en liten resa**\n\n**Om caféen**\nThe Quiet Room är ett lokalt företag som har sitt huvudet i en liten, men exakt placerad byn. Det är ett utmärkt exempel på hur man kan få ett \"liten rum\" i ett stort rum. Caféen har en egen egena, men den är inte en stor byggning utan en liten, enkel bygning som passar perfekt i ett stort rum.\n\n**Vad du kan se**\n*   **Design:** Det är en liten, enkel bygning med en egena, men den är inte en stor byggning utan en liten, enkel bygning som passar perfekt i ett stort rum.\n*   **Känsla:** Caféen känns varm och varm. Det är ett",
+   "För att beskriva ett fotbollslag och dess spelare behöver vi först veta vilken **klubb** som är bakom laget. Fotboll spelar sig ut på grund av en serie av lagar, där varje lag har sina egna mål, målgrupper och strategier.\n\nOm du vill ha ett exempel, här är ett exempel på ett fotbollslag och dess spelare baserat på en vanlig serie:\n\n### Ett Exempel: \"The Red Devils\" (En liten serie)\n\n**1. Lagets Historia och Strategi**\n*   **Lagets historia:** \"The Red Devils\" är ett lag från en liten stad i norra Sverige. De har haft ett stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort stort",
+   "Flyg ett flygplan är ett komplex system som inte bara handlar om att flyga, utan om att hantera energi, mekanik och fysik. Det är ett resultat av en kombination av en **flygningstid** (hur lång tid ett flygplan kan hålla sig i luft) och en **flygningstid** (hur lång tid ett flygplan kan hålla sig i luft).\n\nHär är en genomgång av de grundläggande principer och processer som krävs för att ett flygplan ska kunna flyga:\n\n### 1. Flygningstid (Längsiktens dimension)\nDetta är den viktigaste delen av flygplanens funktion. Det är den tiden det flygplan kan hålla sig i luft.\n*   **Fysik:** Det är ett problem med att balansera kraften mot luftdraget. När ett flygplan flyger upp",
+   "En marknad den lördagsmorgonen är ett sätt att få in information, diskutera idéer och skapa nyhetar i enlighet med den dagens tidning. Här är en genomgång av vad som kan ske och hur man kan göra det bra:\n\n### 1. Tidigt start och tidig nyhet\nMarknaderna öppnas ofta på morgonen, men den **tidigaste** nyheten är ofta den som kommer först.\n*   **Förstning:** En ny nyhet kan komma ut i tidningen först, och den kommer sedan att utgöra en nyhet för marknaderna.\n*   **Tidigt:** Marknaderna öppnas ofta på 10:00 eller 11:00 timmar. Det är viktigt att vara på plats tidigt för att få se nyheter som kan vara relevanta för dagen.\n\n### 2. Typiska nyheter och tema\nMarknad",
+   "Här är en enkel och strukturerad instruktion för att byta ett däck. Du kan använda den här instruktionen för att göra det själv eller för att få hjälp från en annan person.\n\n### **Instruktion: Byta ett Däck**\n\n#### **1. Förberedelser**\n*   **Tillräcklig vatten:** Det är viktigt att ha vatten tillgängligt för att hålla däcket tryckt.\n*   **Tillräcklig vattenkylning:** Det är viktigt att ha vattenkylning tillgänglig för att hålla däcket tryckt.\n*   **Tillräcklig vattenkryktning:** Det är viktigt att ha vattenkryktning tillgänglig för att hålla däcket tryckt.\n*   **Tillräcklig vattenkrytning:** Det är viktigt att ha vatten",
+   "Det är ett stort och känsligt område att beskriva ett hotellrum, eftersom det kan bero på hur man ser på det. Här är ett exempel på hur ett **modernt, minimalistiskt och hygieniskt** hotellrum kan beskrivas, vilket är ett populärt alternativ:\n\n**Det moderna, minimalistiska och hygieniskt hotellrum**\n\nDetta rum är utformat för att minimera känslan av \"tystnad\" och fokus på komfort och funktion. Det är ett stort, rektangulärt rum med en enkel, glansig väggar och ett stort, bredt eget rum i mitten.\n\n*   **Fältet:** Fältet är stort och väl utrustat med en egen badkabin, en egen bad, ett eget eget rum och ett eget eget rum. Det finns även ett eget eget rum för att få tillgång till en egen bad och ett eget eget rum för att få tillgång till ett eget eget rum",
+   "**Ekosystem** är ett samhället av biologiska system som innehåller både en **organism** (som en single cell, en plant, en ening eller ett djur) och dess **miljö** (som jord, vatten, luft och andra material).\n\nDetta system är inte bara ett antal organismer, utan ett samiskt arbete där organismerna har ett specifikt utbud av energi och material som de använder för att överleva, reproduceras och utvecklas. Ett ekosystem är en liten, men viktig del av en omgivning som har en stor omgivning.\n\n### De två huvudkomponenterna\nEtt ekosystem består av två delar:\n1.  **Organism:** En single cell, en plant, en ening eller ett djur.\n2.  **Miljö:** Jord, vatten, luft och andra material som organismerna behöver för att fungera.\n\n###",
+   "Här är ett möte mellan två gamla vänner på ett tåg. Det är ett lite \"tyst\" och känsligt, men det är det enda sättet de kan göra det.\n\n***\n\n**Tid:** 14:30\n**Tåg:** Tåg 101 (Ljungby – Örebro)\n**Längd:** 12 minuter\n**Ställning:** Enninga (vän) och Lena (vän)\n\n***\n\n**Enninga:**\n\"Jag ser dig här. Du är en liten litenning, men du är en liten litenning. Du är en liten litenning. Du är en liten litenning. Du är en liten litenning. Du är en liten litenning. Du är en liten litenning. Du är en liten litenning. Du är en liten litenning. Du är en liten litenning. Du är en liten litenning. Du är en liten liten",
+   "Det är ett perfekt sätt att få intrycket av en liten, men varm restaurang. När lunchrusningen börjar, känns köket inte som ett stort utbud, utan som ett **förtroellt och lugnt centrum**.\n\nHär är en beskrivning av hur köket ser ut och känns under lunchrusningen:\n\n### 1. Atmosfären och Ljudet\nDet är ett område där ljudet är mest fokuscentrat. Det finns ingen tunga musik eller en stor musikstation.\n*   **Ljudet:** Det är ett lugnt, \"hållande\" ljudet. Det kan vara ett enkelt ljudet av en liten kaffe, ett ljudet av en liten kaffe på en liten kaffe, eller ett ljudet av en liten kaffe på en liten kaffe. Det är ett ljudet som ger känsla till en liten gang, en liten promenad eller en liten resa.\n*",
+   "Det är ett yrke som ofta blir ett stort problem att känna till, men det är ett viktigt arbete som har ett stort samband med vår egen egenhet och vår egenhet.\n\nDet är **tjänstpersonell** (eller \"personell i tjänst\"). Det är de personer som arbetar för företag, organisationer, kommuner eller andra institutioner. De är inte bara en del av en organisation; de är en del av den personliga världen.\n\nHär är några av de viktigaste områdena som är centrala för tjänstpersonell:\n\n*   **Kommunikation och relationer:** Tjänstpersonell är ofta den person som får information från andra och som får information från andra. De måste kunna sprida information, lösa konflikter, skapa relationer och skapa en positive mening. Om en organisation är en liten gruppa, är den person som är den person som får information från andra ofta den som",
+   "Det är ett vackert och känsligt sätt att beskriva ett bröllop i en liten kyrka. Här är en variation av text som kan användas för en introduktion, en bildtext eller ett kort skriftigt utkast:\n\n***\n\n**Titel: En liten kyrka, en liten resa**\n\nDet är ett sätt att beskriva ett bröllop i en liten kyrka som att ett litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet litet",
+   "Det är ett mycket bra och viktig sätt att tänka på. Ett **regnigt sportlov** är ett sätt att få ett stort antal spelare att få ut ett stort antal pengar (ofta ett stort antal dollar eller euro) utan att de ska ha några problem med att spela.\n\nHär är de vanligaste och vanligaste teknikerna man använder för att göra ett regnigt spel:\n\n### 1. De \"Skrivna\" (Written) Regler\nDenna teknik är den vanligaste och enklasten.\n*   **Princip:** Ett spelare får ett stort antal pengar, men de får inte få ut pengar på en single turn.\n*   **Hur det fungerar:**\n    *   Spelaren får ett stort antal pengar (t.ex. 1000 dollar).\n    *   De får inte få ut pengar på en single turn.\n    *   De får inte få ut pengar på en single",
+   "Detta är ett skräddarsytt utbud av en båt och ett hav i storm, där vi har valt att använda en **klassisk båt med en liten kabin** för att skapa en känsla av tradition, stilla och enkelhet. Detta sättet ger ett starkare kontrast till den moderna, kompakta batten, vilket gör det mer känsligt för stormen.\n\n### Båt: *The Quiet Anchor*\nBåten är en liten, enkel båt med en liten kabin, ofta kallad \"The Quiet Anchor\". Båten är bygget med en enkel, robust struktur och en liten, enkel kabin. Båten är inte en stor båt, men den är ändå en båt. Båten är enkel, liten och enkel. Båten är en liten båt.\n\nBåten är en liten båt.\n\n### Havet: *The Stormy Sea*\nH",
+   "Här är ett exempel på ett kort tal till en kollega som går i pension:\n\n\"Jag ser på dig som en person som har en litenning i ditt hjärta. Du har alltid varit en varm och nyfiken person, men nu ser jag dig som en person som har en litenning i ditt hjärta. Du har alltid varit en varm och nyfiken person, men nu ser jag dig som en person som har en litenning i ditt hjärta. Du har alltid varit en varm och nyfiken person, men nu ser jag dig som en person som har en litenning i ditt hjärta.\"\n\n*(Kopiera och spara texten för att spara den på mobilen)*"
+  ]
+ }
+}

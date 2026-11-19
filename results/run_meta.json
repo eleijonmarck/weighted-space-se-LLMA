@@ -1,0 +1,17 @@
+{
+ "model": "Qwen/Qwen3.5-0.8B",
+ "revision": "2fc0636471",
+ "seed": 0,
+ "k_grid": [
+  1.0,
+  2.0,
+  4.0
+ ],
+ "n_select_per_gender": 100,
+ "n_test_per_gender": 250,
+ "n_blimp": 400,
+ "n_ppl_docs": 150,
+ "torch": "2.15.0",
+ "device": "mps",
+ "seconds": 2258.8000259399414
+}

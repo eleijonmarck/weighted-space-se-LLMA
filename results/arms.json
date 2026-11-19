@@ -1,0 +1,341 @@
+{
+ "base": {
+  "target": {
+   "gender_auc": 0.6492106666666667,
+   "gender_auc_single_token": 0.7052669552669553,
+   "gender_auc_multi_token": 0.6360141138101665,
+   "mismatch_mass_after_ett": 0.27026797820505166,
+   "mismatch_mass_after_en": 0.4064831341155846,
+   "n": 1500,
+   "n_single": 192,
+   "n_multi": 1308,
+   "sentence_balanced_acc": 0.6873333333333334,
+   "sentence_acc_utr": 0.744,
+   "sentence_acc_neu": 0.6306666666666667
+  },
+  "regression": {
+   "ppl_sv": 53.525177001953125,
+   "ppl_en": 39.46489334106445,
+   "blimp_adjectives-mascfem_to_neut": 0.83,
+   "blimp_adjectives-neut_and_adverbs_to_masfem": 0.7025,
+   "blimp_finite-to-nonfinite": 0.8025,
+   "blimp_active-to-passive": 0.83,
+   "blimp_adjectives-sg-to-pl": 0.8025
+  },
+  "edits": []
+ },
+ "zero_feedback": {
+  "target": {
+   "gender_auc": 0.6754346666666665,
+   "gender_auc_single_token": 0.7099567099567099,
+   "gender_auc_multi_token": 0.6647407782276202,
+   "mismatch_mass_after_ett": 0.23349162378678046,
+   "mismatch_mass_after_en": 0.31371957424109786,
+   "n": 1500,
+   "n_single": 192,
+   "n_multi": 1308,
+   "sentence_balanced_acc": 0.6833333333333333,
+   "sentence_acc_utr": 0.716,
+   "sentence_acc_neu": 0.6506666666666666
+  },
+  "regression": {
+   "ppl_sv": 55.206844329833984,
+   "ppl_en": 39.49620056152344,
+   "blimp_adjectives-mascfem_to_neut": 0.85,
+   "blimp_adjectives-neut_and_adverbs_to_masfem": 0.665,
+   "blimp_finite-to-nonfinite": 0.7825,
+   "blimp_active-to-passive": 0.825,
+   "blimp_adjectives-sg-to-pl": 0.7975
+  },
+  "edits": [
+   {
+    "layer": 20,
+    "rank": 1,
+    "rel_frob": 0.045503128319978714,
+    "n_params_touched": 3670016,
+    "offset_over_gap": -4.15165182232613e-08,
+    "name": "zero_feedback"
+   }
+  ]
+ },
+ "dev_selected": {
+  "target": {
+   "gender_auc": 0.673616,
+   "gender_auc_single_token": 0.7005772005772006,
+   "gender_auc_multi_token": 0.6624072199730094,
+   "mismatch_mass_after_ett": 0.14281620767781816,
+   "mismatch_mass_after_en": 0.2869277363969112,
+   "n": 1500,
+   "n_single": 192,
+   "n_multi": 1308,
+   "sentence_balanced_acc": 0.6733333333333333,
+   "sentence_acc_utr": 0.6653333333333333,
+   "sentence_acc_neu": 0.6813333333333333
+  },
+  "regression": {
+   "ppl_sv": 58.84928894042969,
+   "ppl_en": 39.543800354003906,
+   "blimp_adjectives-mascfem_to_neut": 0.865,
+   "blimp_adjectives-neut_and_adverbs_to_masfem": 0.6925,
+   "blimp_finite-to-nonfinite": 0.7825,
+   "blimp_active-to-passive": 0.8275,
+   "blimp_adjectives-sg-to-pl": 0.7975
+  },
+  "edits": [
+   {
+    "layer": 22,
+    "rank": 1,
+    "rel_frob": 0.08336003869771957,
+    "n_params_touched": 3670016,
+    "offset_over_gap": -9.28900547592093e-08,
+    "name": "dev_selected"
+   }
+  ]
+ },
+ "weights_write_dir": {
+  "target": {
+   "gender_auc": 0.6455306666666667,
+   "gender_auc_single_token": 0.7312409812409811,
+   "gender_auc_multi_token": 0.626736111111111,
+   "mismatch_mass_after_ett": 0.20145722004255606,
+   "mismatch_mass_after_en": 0.29775266143468027,
+   "n": 1500,
+   "n_single": 192,
+   "n_multi": 1308,
+   "sentence_balanced_acc": 0.6226666666666667,
+   "sentence_acc_utr": 0.48,
+   "sentence_acc_neu": 0.7653333333333333
+  },
+  "regression": {
+   "ppl_sv": 64.71721649169922,
+   "ppl_en": 39.78342819213867,
+   "blimp_adjectives-mascfem_to_neut": 0.755,
+   "blimp_adjectives-neut_and_adverbs_to_masfem": 0.75,
+   "blimp_finite-to-nonfinite": 0.795,
+   "blimp_active-to-passive": 0.8225,
+   "blimp_adjectives-sg-to-pl": 0.8025
+  },
+  "edits": [
+   {
+    "layer": 22,
+    "rank": 1,
+    "rel_frob": 0.0833623856306076,
+    "n_params_touched": 3670016,
+    "offset_over_gap": -9.28900547592093e-08,
+    "name": "weights_write_dir"
+   }
+  ]
+ },
+ "random_seed0": {
+  "target": {
+   "gender_auc": 0.576064,
+   "gender_auc_single_token": 0.47655122655122656,
+   "gender_auc_multi_token": 0.5762061403508772,
+   "mismatch_mass_after_ett": 0.3887611494978316,
+   "mismatch_mass_after_en": 0.39648887753585527,
+   "n": 1500,
+   "n_single": 192,
+   "n_multi": 1308,
+   "sentence_balanced_acc": 0.6379999999999999,
+   "sentence_acc_utr": 0.6466666666666666,
+   "sentence_acc_neu": 0.6293333333333333
+  },
+  "regression": {
+   "ppl_sv": 58.021209716796875,
+   "ppl_en": 39.78789520263672,
+   "blimp_adjectives-mascfem_to_neut": 0.81,
+   "blimp_adjectives-neut_and_adverbs_to_masfem": 0.6775,
+   "blimp_finite-to-nonfinite": 0.795,
+   "blimp_active-to-passive": 0.82,
+   "blimp_adjectives-sg-to-pl": 0.8
+  },
+  "edits": [
+   {
+    "layer": 22,
+    "rank": 1,
+    "rel_frob": 0.08335928618907928,
+    "n_params_touched": 3670016,
+    "offset_over_gap": -9.28900547592093e-08,
+    "name": "random1000"
+   }
+  ]
+ },
+ "random_seed1": {
+  "target": {
+   "gender_auc": 0.6098773333333334,
+   "gender_auc_single_token": 0.6634199134199134,
+   "gender_auc_multi_token": 0.5958516081871345,
+   "mismatch_mass_after_ett": 0.27882556844064693,
+   "mismatch_mass_after_en": 0.32161676471689676,
+   "n": 1500,
+   "n_single": 192,
+   "n_multi": 1308,
+   "sentence_balanced_acc": 0.636,
+   "sentence_acc_utr": 0.7546666666666667,
+   "sentence_acc_neu": 0.5173333333333333
+  },
+  "regression": {
+   "ppl_sv": 58.22114181518555,
+   "ppl_en": 40.44597625732422,
+   "blimp_adjectives-mascfem_to_neut": 0.835,
+   "blimp_adjectives-neut_and_adverbs_to_masfem": 0.7025,
+   "blimp_finite-to-nonfinite": 0.8,
+   "blimp_active-to-passive": 0.83,
+   "blimp_adjectives-sg-to-pl": 0.785
+  },
+  "edits": [
+   {
+    "layer": 22,
+    "rank": 1,
+    "rel_frob": 0.08336147665977478,
+    "n_params_touched": 3670016,
+    "offset_over_gap": -9.28900547592093e-08,
+    "name": "random1001"
+   }
+  ]
+ },
+ "random_seed2": {
+  "target": {
+   "gender_auc": 0.6077866666666667,
+   "gender_auc_single_token": 0.6861471861471862,
+   "gender_auc_multi_token": 0.5897576473234368,
+   "mismatch_mass_after_ett": 0.26895698795833034,
+   "mismatch_mass_after_en": 0.4646586449936762,
+   "n": 1500,
+   "n_single": 192,
+   "n_multi": 1308,
+   "sentence_balanced_acc": 0.656,
+   "sentence_acc_utr": 0.6973333333333334,
+   "sentence_acc_neu": 0.6146666666666667
+  },
+  "regression": {
+   "ppl_sv": 57.78718185424805,
+   "ppl_en": 40.23170852661133,
+   "blimp_adjectives-mascfem_to_neut": 0.8125,
+   "blimp_adjectives-neut_and_adverbs_to_masfem": 0.705,
+   "blimp_finite-to-nonfinite": 0.775,
+   "blimp_active-to-passive": 0.835,
+   "blimp_adjectives-sg-to-pl": 0.8075
+  },
+  "edits": [
+   {
+    "layer": 22,
+    "rank": 1,
+    "rel_frob": 0.0833597257733345,
+    "n_params_touched": 3670016,
+    "offset_over_gap": -9.28900547592093e-08,
+    "name": "random1002"
+   }
+  ]
+ },
+ "random_seed3": {
+  "target": {
+   "gender_auc": 0.6118773333333333,
+   "gender_auc_single_token": 0.6410533910533911,
+   "gender_auc_multi_token": 0.5996541835357624,
+   "mismatch_mass_after_ett": 0.37214246596988126,
+   "mismatch_mass_after_en": 0.4136549355444869,
+   "n": 1500,
+   "n_single": 192,
+   "n_multi": 1308,
+   "sentence_balanced_acc": 0.6706666666666667,
+   "sentence_acc_utr": 0.6773333333333333,
+   "sentence_acc_neu": 0.664
+  },
+  "regression": {
+   "ppl_sv": 57.85544967651367,
+   "ppl_en": 39.947994232177734,
+   "blimp_adjectives-mascfem_to_neut": 0.785,
+   "blimp_adjectives-neut_and_adverbs_to_masfem": 0.71,
+   "blimp_finite-to-nonfinite": 0.7875,
+   "blimp_active-to-passive": 0.825,
+   "blimp_adjectives-sg-to-pl": 0.7975
+  },
+  "edits": [
+   {
+    "layer": 22,
+    "rank": 1,
+    "rel_frob": 0.08335919678211212,
+    "n_params_touched": 3670016,
+    "offset_over_gap": -9.28900547592093e-08,
+    "name": "random1003"
+   }
+  ]
+ },
+ "random_seed4": {
+  "target": {
+   "gender_auc": 0.6053706666666666,
+   "gender_auc_single_token": 0.6316738816738816,
+   "gender_auc_multi_token": 0.5919014282501125,
+   "mismatch_mass_after_ett": 0.35058882787251444,
+   "mismatch_mass_after_en": 0.39255314950750547,
+   "n": 1500,
+   "n_single": 192,
+   "n_multi": 1308,
+   "sentence_balanced_acc": 0.642,
+   "sentence_acc_utr": 0.624,
+   "sentence_acc_neu": 0.66
+  },
+  "regression": {
+   "ppl_sv": 58.27527618408203,
+   "ppl_en": 40.44813537597656,
+   "blimp_adjectives-mascfem_to_neut": 0.7875,
+   "blimp_adjectives-neut_and_adverbs_to_masfem": 0.6875,
+   "blimp_finite-to-nonfinite": 0.7925,
+   "blimp_active-to-passive": 0.83,
+   "blimp_adjectives-sg-to-pl": 0.7925
+  },
+  "edits": [
+   {
+    "layer": 22,
+    "rank": 1,
+    "rel_frob": 0.0833599716424942,
+    "n_params_touched": 3670016,
+    "offset_over_gap": -9.28900547592093e-08,
+    "name": "random1004"
+   }
+  ]
+ },
+ "fewshot_prompt": {
+  "target": {
+   "gender_auc": 0.731872,
+   "gender_auc_single_token": 0.8178210678210679,
+   "gender_auc_multi_token": 0.7271845479082321,
+   "mismatch_mass_after_ett": 0.35691143936370207,
+   "mismatch_mass_after_en": 0.2067452537429061,
+   "n": 1500,
+   "n_single": 192,
+   "n_multi": 1308,
+   "sentence_balanced_acc": 0.7113333333333334,
+   "sentence_acc_utr": 0.912,
+   "sentence_acc_neu": 0.5106666666666667
+  },
+  "regression": {},
+  "edits": []
+ },
+ "lora_dev": {
+  "target": {
+   "gender_auc": 0.7739466666666668,
+   "gender_auc_single_token": 0.8437950937950939,
+   "gender_auc_multi_token": 0.7669323549257759,
+   "mismatch_mass_after_ett": 0.23596437877624374,
+   "mismatch_mass_after_en": 0.4261149609288655,
+   "n": 1500,
+   "n_single": 192,
+   "n_multi": 1308,
+   "sentence_balanced_acc": 0.7506666666666667,
+   "sentence_acc_utr": 0.68,
+   "sentence_acc_neu": 0.8213333333333334
+  },
+  "regression": {
+   "ppl_sv": 80.12667846679688,
+   "ppl_en": 36.91087341308594,
+   "blimp_adjectives-mascfem_to_neut": 0.855,
+   "blimp_adjectives-neut_and_adverbs_to_masfem": 0.755,
+   "blimp_finite-to-nonfinite": 0.8725,
+   "blimp_active-to-passive": 0.9,
+   "blimp_adjectives-sg-to-pl": 0.8025
+  },
+  "edits": []
+ }
+}
