@@ -1,0 +1,26 @@
+{
+ "model": "Qwen/Qwen3.5-0.8B-Base",
+ "revision": "dc7cdfe2ee",
+ "target": {
+  "gender_auc": 0.7649226666666666,
+  "gender_auc_single_token": 0.8163780663780664,
+  "gender_auc_multi_token": 0.7538939496176337,
+  "mismatch_mass_after_ett": 0.22227211280334913,
+  "mismatch_mass_after_en": 0.1657202236763796,
+  "n": 1500,
+  "n_single": 192,
+  "n_multi": 1308,
+  "sentence_balanced_acc": 0.7613333333333334,
+  "sentence_acc_utr": 0.76,
+  "sentence_acc_neu": 0.7626666666666667
+ },
+ "regression": {
+  "ppl_sv": 33.17439651489258,
+  "ppl_en": 26.08774185180664,
+  "blimp_adjectives-mascfem_to_neut": 0.89,
+  "blimp_adjectives-neut_and_adverbs_to_masfem": 0.7525,
+  "blimp_finite-to-nonfinite": 0.8775,
+  "blimp_active-to-passive": 0.9025,
+  "blimp_adjectives-sg-to-pl": 0.84
+ }
+}

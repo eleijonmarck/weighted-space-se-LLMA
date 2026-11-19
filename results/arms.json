@@ -337,5 +337,35 @@
    "blimp_adjectives-sg-to-pl": 0.8025
   },
   "edits": []
+ },
+ "lora_mixed": {
+  "target": {
+   "gender_auc": 0.8070506666666667,
+   "gender_auc_single_token": 0.8354978354978355,
+   "gender_auc_multi_token": 0.8025261470985154,
+   "mismatch_mass_after_ett": 0.18625715839331114,
+   "mismatch_mass_after_en": 0.2697935839334445,
+   "n": 1500,
+   "n_single": 192,
+   "n_multi": 1308,
+   "sentence_balanced_acc": 0.7826666666666666,
+   "sentence_acc_utr": 0.8293333333333334,
+   "sentence_acc_neu": 0.736
+  },
+  "regression": {
+   "ppl_sv": 29.677719116210938,
+   "ppl_en": 28.011526107788086,
+   "blimp_adjectives-mascfem_to_neut": 0.9175,
+   "blimp_adjectives-neut_and_adverbs_to_masfem": 0.7875,
+   "blimp_finite-to-nonfinite": 0.93,
+   "blimp_active-to-passive": 0.9325,
+   "blimp_adjectives-sg-to-pl": 0.865
+  },
+  "edits": [],
+  "config": {
+   "n_template_sentences": 1200,
+   "n_general_texts": 1200,
+   "general_source": "HuggingFaceFW/fineweb-2 swe_Latn train/000_00000.parquet rows 0-1199, cut to 128 tokens"
+  }
  }
 }

@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Testing weight-space edits on Swedish gender agreement in a small open LLM"
 readme = "README.md"
 authors = [
-    { name = "Eric Leijonmarck", email = "eric.leijonmarck@gmail.com" }
+    { name = "Eric Leijonmarck" }
 ]
 requires-python = ">=3.12"
 dependencies = [

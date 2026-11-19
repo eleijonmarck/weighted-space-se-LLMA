@@ -44,6 +44,8 @@ def main():
     body += '<div class="pagebreak"></div><h2>Appendix A. Figures</h2>'
     for f, cap in (("layer_sweep.png", "Dev gender AUC after amplifying the article-gender signal in each layer. Selection data only."),
                    ("frontier.png", "Dev-only trade-off between gender AUC gain and Swedish perplexity cost, layers 16 to 23.")):
+        if not (ROOT / "figures" / f).exists():
+            continue
         body += f'<p><img src="figures/{f}"><br><em>{cap}</em></p>'
     body += '<div class="pagebreak"></div><h2>Appendix B. Design and self-review</h2>' + re.sub(r"<h1>.*?</h1>", "", md("DESIGN.md"), count=1)
     html = f"<!doctype html><html><head><meta charset='utf-8'><title>Weight-space editing for Swedish en/ett agreement</title><style>{CSS}</style></head><body>{body}</body></html>"

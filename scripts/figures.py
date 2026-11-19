@@ -68,7 +68,7 @@ def fig_tradeoff():
     ax.axvline(0, color=NEUTRAL, linewidth=1)
     ax.scatter([r[0] * 100 for r in rnd], [r[1] for r in rnd], s=40, color=NEUTRAL, edgecolor=SURFACE, linewidth=1.5, label="random direction, 5 seeds")
     offsets = {"edit, no feedback": (-40, 16), "edit, dev-selected": (8, -10), "edit, post-hoc no adjective": (14, 8),
-               "edit, post-hoc in budget": (8, -10), "edit, weights-only write": (6, 6), "LoRA, same dev data": (-110, -4),
+               "edit, post-hoc in budget": (8, -10), "edit, weights-only write": (6, 8), "LoRA, same dev data": (-110, -4), "LoRA, mixed with general Swedish": (8, -4),
                "few-shot prompt": (6, 4)}
     for label, x, y, c in pts:
         ax.scatter([x * 100], [y], s=60, color=c, edgecolor=SURFACE, linewidth=1.5, zorder=3)
@@ -77,7 +77,7 @@ def fig_tradeoff():
     ax.annotate("base", (0, 0), xytext=(6, -12), textcoords="offset points", fontsize=8.5, color=INK)
     ax.set_xlabel("Swedish perplexity change, %", color=INK2)
     ax.set_ylabel("gender AUC change on test nouns", color=INK2)
-    ax.set_title("Edits gain little gender AUC per unit of Swedish perplexity", color=INK, fontsize=11, loc="left")
+    ax.set_title("Raw-text scoring: edits gain little gender AUC per unit of perplexity", color=INK, fontsize=11, loc="left")
     ax.legend(frameon=False, fontsize=8.5, labelcolor=INK2, loc="lower right")
     fig.tight_layout()
     fig.savefig(FIG / "tradeoff.png", dpi=200)
@@ -108,9 +108,35 @@ def fig_frontier():
     fig.savefig(FIG / "frontier.png", dpi=200)
 
 
+def fig_generation():
+    g = json.loads((RES / "generation_heldout160.json").read_text())
+    order = [("base", "base"), ("lora_mixed", "LoRA, mixed"), ("fewshot_prefix", "few-shot prefix"),
+             ("posthoc_budget_L22_k05", "edit, post-hoc budget"), ("dev_selected", "edit, dev-selected")]
+    base = g["base"]["rate"]
+    fig, ax = plt.subplots(figsize=(7, 2.9), facecolor=SURFACE)
+    style(ax)
+    for i, (k, label) in enumerate(order):
+        r = g[k]["rate"] * 100
+        lo, hi = (base + g[k]["ci95"][0]) * 100, (base + g[k]["ci95"][1]) * 100
+        if k != "base":
+            ax.plot([lo, hi], [i, i], color=S1, linewidth=2, solid_capstyle="round")
+        ax.scatter([r], [i], s=60, color=INK if k == "base" else S1, edgecolor=SURFACE, linewidth=1.5, zorder=3)
+        ax.text(r, i + 0.28, f"{r:.1f}%", color=INK, fontsize=8.5, ha="center")
+    ax.axvline(base * 100, color=NEUTRAL, linewidth=1, linestyle="--")
+    ax.set_yticks(range(len(order)), [l for _, l in order])
+    ax.set_ylim(-0.6, len(order) - 0.3)
+    ax.set_xlim(0, 13)
+    ax.set_xlabel("en/ett mismatch rate in chat generation, %. Lines: 95% CI by prompt", color=INK2)
+    ax.set_title("160 new chat prompts: only the edits clearly cut en/ett errors", color=INK, fontsize=11, loc="left")
+    fig.tight_layout()
+    fig.savefig(FIG / "generation.png", dpi=200)
+
+
 if __name__ == "__main__":
     FIG.mkdir(exist_ok=True)
     fig_layers()
     fig_tradeoff()
     if (RES / "frontier.json").exists():
         fig_frontier()
+    if (RES / "generation_heldout160.json").exists():
+        fig_generation()

@@ -10,14 +10,29 @@ LORA_CFG = {"r": 8, "lora_alpha": 16, "lora_dropout": 0.0, "target_modules": ["d
 TRAIN_CFG = {"lr": 2e-4, "epochs": 2, "batch_size": 16}
 
 
-def train_lora(model, tok, items, seed=0):
-    """Standard fine-tuning control: LoRA on down_proj, LM loss on the correct dev sentences only."""
+GENERAL_MAX_TOKENS = 128
+
+
+def general_swedish(n, skip=0):
+    """General Swedish web text from a FineWeb-2 train shard. The perplexity texts come from the test shard."""
+    import pandas as pd
+    from huggingface_hub import hf_hub_download
+
+    path = hf_hub_download("HuggingFaceFW/fineweb-2", "data/swe_Latn/train/000_00000.parquet", repo_type="dataset")
+    return pd.read_parquet(path, columns=["text"]).text.iloc[skip : skip + n].tolist()
+
+
+def train_lora(model, tok, items, seed=0, general=None):
+    """Standard fine-tuning control: LoRA on down_proj, LM loss on the correct dev sentences.
+    With general texts, they are mixed in, each cut to GENERAL_MAX_TOKENS, to limit forgetting."""
     torch.manual_seed(seed)
     m = copy.deepcopy(model)
     m.train()
     m = get_peft_model(m, LoraConfig(**LORA_CFG))
     bos = [tok.convert_tokens_to_ids("<|endoftext|>")]
     texts = [it.prefix_ok + it.cont for it in items]
+    for t in general or []:
+        texts.append(tok.decode(tok.encode(t)[:GENERAL_MAX_TOKENS]))
     opt = torch.optim.AdamW([p for p in m.parameters() if p.requires_grad], lr=TRAIN_CFG["lr"])
     rng = random.Random(seed)
     bs = TRAIN_CFG["batch_size"]

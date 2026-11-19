@@ -20,6 +20,10 @@
 | `scripts/posthoc_edit.py` | Post-hoc arms: direction without the adjective sentence, or a fixed layer and k |
 | `scripts/frontier.py` | Dev-only trade-off of gender AUC gain against Swedish perplexity |
 | `scripts/generation_prompt_control.py` | Prompt-only controls in free generation |
+| `scripts/lora_mixed.py` | Fairer LoRA control, mixed 1:1 with general Swedish text |
+| `scripts/generation_large.py` | Free generation on 200 prompts for the main arms, with CIs by prompt |
+| `scripts/generation_heldout.py` | The same rates on the 160 prompts written after all edit choices |
+| `scripts/base_model_check.py` | The pretrained-only `Qwen3.5-0.8B-Base` on the same test, to separate format from ability |
 | `scripts/generation_stats.py`, `scripts/generation_bootstrap.py` | Repetition, "nyckel" leak, CIs by prompt |
 | `scripts/bootstrap.py`, `scripts/suffix_baseline.py` | AUC CIs by noun, and the spelling-only baseline |
 | `scripts/figures.py`, `scripts/build_report.py` | Figures and `report.pdf` |
@@ -32,7 +36,7 @@
 - About 10 GB of disk for the model and one FineWeb-2 shard.
 - About 16 GB RAM.
 
-On an M5 Pro with MPS, `run_experiment.py` takes about 40 minutes and all steps together about 1.5 hours. On CPU only it is slower. Set `PYTORCH_ENABLE_MPS_FALLBACK=1` if an op is missing on MPS.
+On an M5 Pro with MPS, `run_experiment.py` takes about 40 minutes and all steps together about 3.5 hours. On CPU only it is slower. Set `PYTORCH_ENABLE_MPS_FALLBACK=1` if an op is missing on MPS.
 
 ## Reproduce
 
@@ -49,6 +53,10 @@ uv run python scripts/posthoc_edit.py
 uv run python scripts/frontier.py
 uv run python scripts/posthoc_edit.py --layer 22 --k 0.5 --name posthoc_budget_L22_k05
 uv run python scripts/generation_prompt_control.py
+uv run python scripts/lora_mixed.py
+uv run python scripts/generation_large.py
+uv run python scripts/generation_heldout.py
+uv run python scripts/base_model_check.py dc7cdfe2ee
 uv run python scripts/bootstrap.py
 uv run python scripts/generation_bootstrap.py
 uv run python scripts/suffix_baseline.py
@@ -64,6 +72,7 @@ The order matters: later scripts read `results/selection.json` and `results/spli
 
 - Model: `Qwen/Qwen3.5-0.8B` at revision `2fc0636471`.
 - Paper edit: `RikiyaT/Qwen3.5-0.8B-weight-space-programming` at `d1671a1787`.
+- Reference: `Qwen/Qwen3.5-0.8B-Base` at `dc7cdfe2ee`.
 - Seed: 0 for all splits and sampling. Random-direction controls use seeds 1000 to 1004. Generation is greedy.
 - Edit settings: `K_GRID`, the sample sizes and the LoRA settings are constants at the top of `scripts/run_experiment.py` and `src/wsp_sv/lora.py`. `results/run_meta.json` records them for the run.
 - Python packages: see `uv.lock`.

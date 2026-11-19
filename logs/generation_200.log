@@ -1,0 +1,20 @@
+/Users/eleijonmarck/dev/eleijonmarck/weighted-space-se-LLMA/.venv/lib/python3.12/site-packages/joblib/_multiprocessing_helpers.py:44: UserWarning: [Errno 1] Operation not permitted.  joblib will operate in serial mode
+  warnings.warn("%s.  joblib will operate in serial mode" % (e,))
+W1119 16:01:26.909000 88495 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/320 [00:00<?, ?it/s]Loading weights:   0%|          | 1/320 [00:00<01:47,  2.98it/s]Loading weights: 100%|██████████| 320/320 [00:00<00:00, 945.22it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+base {'np_checked': 1326, 'mismatches': 136, 'mismatch_rate': 0.10256410256410256, 'nyckel_per_1k': 0.5193905817174516, 'distinct_4gram': 0.7939117474368818} 739s
+dev_selected {'np_checked': 1313, 'mismatches': 33, 'mismatch_rate': 0.02513328255902513, 'nyckel_per_1k': 36.01397015466957, 'distinct_4gram': 0.6838688275992797} 1351s
+posthoc_budget_L22_k05 {'np_checked': 1510, 'mismatches': 57, 'mismatch_rate': 0.03774834437086093, 'nyckel_per_1k': 3.7525879917184266, 'distinct_4gram': 0.7835232647178055} 2018s
+fewshot_prefix {'np_checked': 1987, 'mismatches': 138, 'mismatch_rate': 0.06945143432310015, 'nyckel_per_1k': 0.0, 'distinct_4gram': 0.650119037121947} 2609s
+/Users/eleijonmarck/dev/eleijonmarck/weighted-space-se-LLMA/.venv/lib/python3.12/site-packages/transformers/modeling_utils.py:3303: FutureWarning: `is_gradient_checkpointing` is deprecated and will be removed in v6. Use `is_activation_checkpointing` instead.
+  warnings.warn(
+lora_mixed {'np_checked': 1208, 'mismatches': 114, 'mismatch_rate': 0.09437086092715231, 'nyckel_per_1k': 0.0, 'distinct_4gram': 0.8178287572254336} 3973s
+base                     rate=0.103 delta=+0.000 ci95=[0.0, 0.0]
+dev_selected             rate=0.025 delta=-0.077 ci95=[-0.10224844379473882, -0.05439790232442989]
+posthoc_budget_L22_k05   rate=0.038 delta=-0.065 ci95=[-0.08703956710739827, -0.0437072422263896]
+fewshot_prefix           rate=0.069 delta=-0.033 ci95=[-0.06063305134665731, -0.002627760319038425]
+lora_mixed               rate=0.094 delta=-0.008 ci95=[-0.03724396062245408, 0.020450012567796664]

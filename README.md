@@ -1,6 +1,10 @@
 # Can a direct weight edit fix Swedish en/ett agreement? A test of weight-space programming for SE.LLMA
 
-**Verdict.** No, not in a way worth investing in. A rank-1 edit to one `down_proj` matrix of Qwen3.5-0.8B does carry a real, gender-specific signal. But it gains less than a few-shot prompt, it costs Swedish perplexity, and its dev gains shrink by half or more on held-out nouns and sentences. The pre-registered hypothesis fails. The diagnosis on the way there is worth keeping: this model gets en/ett wrong in **13.5% of noun phrases** in free Swedish text, and its gender use is weaker than a 4-letter suffix rule.
+**Verdict.** The pre-registered hypothesis fails, and weight-space programming is not worth investing in as a research direction for SE.LLMA. A rank-1 edit to one `down_proj` matrix of Qwen3.5-0.8B carries a real, gender-specific signal. But on the pre-registered target, gender AUC on held-out nouns, it gains only +0.025. That is less than a few-shot prompt, it costs Swedish perplexity, and dev gains shrink by half or more on held-out data.
+
+One narrow, exploratory result goes the other way. In chat-mode generation, on 160 prompts written after all choices were made, a small edit chosen on dev data inside a 1% perplexity budget cut en/ett errors from 9.3% to 3.5%. That beats both the prompt and LoRA there.
+
+The diagnosis is worth keeping. The chat model gets en/ett wrong in about **1 noun phrase in 10** in free Swedish text, and its gender use is weaker than a 4-letter suffix rule. The pretrained-only checkpoint is clearly better at gender, so much of the error comes with post-training.
 
 Files: `DESIGN.md` has the plan, designs and self-review. `GETTING_STARTED.md` explains how to reproduce. `TOOLING.md` is the AI-tool log. `report.pdf` is this note plus the figures.
 
@@ -89,21 +93,26 @@ The authors' own summary, "editing … could remove an obstacle … but could no
 | random direction, 5 seeds | 0.576–0.612 | −0.036 to −0.073 | | +8.0 to +8.9% | 0.775–0.800 |
 | few-shot prompt | **0.732** | +0.082 [+0.050, +0.118] | 0.818 / 0.727 | n/a | n/a |
 | LoRA on the same dev data | **0.774** | +0.125 [+0.085, +0.169] | 0.844 / 0.767 | **+49.7%** | 0.873 |
+| LoRA, mixed 1:1 with general Swedish text | **0.807** | +0.157 [+0.119, +0.197] | 0.835 / 0.803 | −44.6%, see point 8 | 0.930 |
+| *reference:* pretrained-only `Qwen3.5-0.8B-Base` | 0.765 | +0.116 | 0.816 / 0.754 | −38.0%, see point 8 | 0.878 |
 | *post-hoc:* edit, no-adjective direction | 0.678 | +0.029 | 0.722 / 0.668 | +9.2% | 0.785 |
 | *post-hoc:* best dev point within 2% ppl, L22 k=0.5 | 0.664 | +0.015 | 0.715 / 0.651 | +0.8% | 0.800 |
 
-Full metrics, including both gender BLiMP sets, mismatch mass and English perplexity, are in `results/arms.json` and `results/posthoc_*.json`. With 400 pairs per BLiMP set, differences of about 2 points are within noise.
+Full metrics, including both gender BLiMP sets, mismatch mass and English perplexity, are in `results/arms.json`, `results/posthoc_*.json` and `results/base_model_check.json`. With 400 pairs per BLiMP set, differences of about 2 points are within noise.
 
-**Free generation, 40 prompts.**
+**Free generation in chat mode, 200 prompts.** These are the 40 original prompts plus 160 written after all edit choices. Greedy decoding, thinking off, 200 tokens. The 95% CIs come from a bootstrap over prompts. The 40-prompt pilot is in `results/generation.json` and points the same way.
 
-| Arm | en/ett mismatch | Δ, 95% CI by prompt | distinct 4-grams | "nyckel" per 1k words |
-|---|---|---|---|---|
-| base | 13.5% (41/304) | | 0.847 | 0.8 |
-| edit, dev-selected | 1.7% (5/294) | −11.8 [−17.7, −6.6] | 0.735 | **47.0** |
-| *post-hoc:* no-adjective direction | 2.1% (6/290) | −11.4 [−17.5, −5.9] | 0.738 | 0.0 |
-| *post-hoc:* within budget, L22 k=0.5 | 4.7% (15/317) | −8.8 [−15.3, −2.6] | 0.853 | 2.6 |
-| few-shot prefix | 6.0% (22/368) | −7.5 [−14.1, −1.7] | 0.675 | |
-| system instruction | 14.9% (33/222) | +1.4 [−8.6, +13.5] | 0.664 | |
+| Arm | mismatch, all 200 | Δ, 95% CI | mismatch, new 160 only | Δ, 95% CI | distinct 4-grams | "nyckel" per 1k words |
+|---|---|---|---|---|---|---|
+| base | 10.3% (136/1326) | | 9.3% (95/1022) | | 0.794 | 0.5 |
+| edit, dev-selected, pre-registered | 2.5% (33/1313) | −7.7 [−10.2, −5.4] | 2.7% | −6.5 [−9.2, −4.1] | 0.684 | **36.0** |
+| *post-hoc:* budget edit, L22 k=0.5 | **3.8%** (57/1510) | −6.5 [−8.7, −4.4] | **3.5%** | −5.8 [−7.9, −3.7] | 0.784 | 3.8 |
+| few-shot prefix | 6.9% (138/1987) | −3.3 [−6.1, −0.3] | 7.2% | −2.1 [−5.3, +1.2] | 0.650 | 0.0 |
+| LoRA, mixed with general Swedish | 9.4% (114/1208) | −0.8 [−3.7, +2.0] | 9.2% | −0.1 [−3.0, +3.0] | 0.818 | 0.0 |
+
+A system instruction to "use the right article" did not help in the 40-prompt pilot, 14.9% against 13.5%. Sources: `results/generation_200.json` and `results/generation_heldout160.json`.
+
+![generation](figures/generation.png)
 
 ![trade-off](figures/tradeoff.png)
 
@@ -113,7 +122,7 @@ Full metrics, including both gender BLiMP sets, mismatch mass and English perple
    - The best dev point within the perplexity budget gains only +0.015 on test.
    - It does beat all random directions, which *lower* AUC at the same norm. So the direction is real, but weak.
 2. **Dev gains do not transfer.** Selection on 72 dev evaluations found +0.063 on dev but +0.025 on test. The budget point went from +0.032 to +0.015. More feedback bought fit to the dev sentences, not a better edit. The no-feedback edit did as well on test.
-3. **The prompt beats the edit on the target, with no weight change.** A few-shot prompt gives +0.082. In free generation the prefix also cuts errors, but the model then parrots the 8 example nouns.
+3. **The prompt beats the edit on the target, with no weight change, but not in chat generation.** A few-shot prompt gives +0.082 AUC. In free generation the prefix helps less than the edits, and the model parrots the 8 example nouns, see point 9.
 4. **Contrast directions leak.** One dev sentence contained the adjective *ny/nytt*. The ett-minus-en direction learned "the previous token was *ny*", and the tokenizer splits *nyckel* as ` ny`+`ck`+`el`. The edited model then wrote "nyckel" 56× more often.
    - Perplexity did not reveal this. Only reading generations did.
    - Removing the adjective sentence removed the leak. This is a post-hoc fix and is labeled as such.
@@ -122,15 +131,29 @@ Full metrics, including both gender BLiMP sets, mismatch mass and English perple
    - 8 prompt examples raise AUC by 0.08, which suggests latent ability.
    - But amplifying the model's own article signal helps clearly only in layers 18–23, `figures/layer_sweep.png`. In layers 0–15 it does nothing or hurts.
    - LoRA's +0.125 is fully within what suffix rules learned from 400 dev nouns can explain, 0.83. So it is not evidence of unlocked knowledge.
+   - The strongest evidence for suppression is at the checkpoint level. The pretrained-only checkpoint scores 0.765, the post-trained chat model 0.649. The ability exists after pretraining and weakens in post-training. Part of this gap may be format, see point 8.
 6. **Weights-only reading did not work here.** The first-token unembedding row holds no gender, with a probe at 0.53. A write direction taken from it helped single-token nouns, 0.705 → 0.731, but hurt the 87% of nouns that are multi-token.
 7. **Side check, Design B: the paper's own edit does not hurt Swedish.**
    - Swedish perplexity 53.5 → 52.3, English 39.5 → 37.5.
    - All 5 Swedish BLiMP sets equal or better, gender AUC 0.649 → 0.668.
    - Source: `results/paper_edit_audit.json`.
+8. **Likelihood metrics here partly measure format.** The subject is a chat model, and all likelihoods are scored as raw text after `<|endoftext|>`.
+   - The mixed LoRA lowered Swedish perplexity by 45% and *English* perplexity by 29%. Three hundred LoRA steps on Swedish snippets cannot teach that much English.
+   - The pretrained-only checkpoint lands in the same place: Swedish 33.2, English 26.1. So the mixed LoRA mostly restored raw-text calibration.
+   - Read the LoRA rows, and the BLiMP gains that come with them, as format plus gender, not as gender alone. The edit and prompt rows share one format, so their comparison holds. Free generation in chat mode is the format-free check.
+9. **In chat mode the ranking flips.** The format-free check is free generation.
+   - The mixed LoRA, best on every likelihood metric, does not reduce en/ett errors in chat at all: −0.1 points on the new prompts.
+   - The few-shot prefix is not significant there.
+   - The edits are the only arms with a clear effect. The budget edit keeps diversity close to base, 0.784 against 0.794, and leaks a little "nyckel", 3.8 against 0.5 per 1k words.
+   - Caveats:
+     - The budget edit was picked post-hoc, from dev data only, after the 40-prompt pilot.
+     - The checker only sees an article right before the noun, or one word before.
+     - No human has rated the fluency of the edited text.
 
 ## 5. What this does and does not show
 
-- **It shows** that one widely used edit family, a rank-1 contrast-direction amplification on `down_proj` like the paper's own edit, chosen with or without feedback, is a weak and leaky tool for this Swedish grammar failure. Prompting and LoRA beat it on the target.
+- **It shows** that one widely used edit family, a rank-1 contrast-direction amplification on `down_proj` like the paper's own edit, is weak and leaky on the pre-registered target. That holds whether the edit is chosen with or without feedback, and prompting and LoRA beat it there.
+- **It suggests, exploratory only,** that a small, budget-constrained edit reduces en/ett errors in chat generation more than a prompt or a LoRA trained the same way. The result held on 160 prompts that were written after all choices were made.
 - **It does not show** that no weight edit can fix gender agreement. It also does not test a frontier LLM acting as the "programmer", or other models.
 - **Other limits:**
   - one model,
@@ -138,17 +161,24 @@ Full metrics, including both gender BLiMP sets, mismatch mass and English perple
   - 3 carrier sentences per split,
   - a lexicon with about 2% noise,
   - a mismatch checker that misses agreement more than one word away,
-  - LoRA that was not tuned, with no mixing of general data, which explains its perplexity cost.
+  - LoRA was not tuned beyond one setting, and likelihood metrics favor anything trained on raw text, point 8.
 
 ## 6. Recommendation
 
-**Do not invest SE.LLMA engineering in weight-space editing as a way to improve Swedish.** On a real Swedish failure, the cheap baselines win and the edit's gains do not survive held-out data. The paper's own headline is feedback-driven search on an English looping problem.
+**Do not invest SE.LLMA engineering in weight-space programming as a research direction.** On the pre-registered target, cheap baselines win and dev gains do not survive held-out data. The paper's own headline is feedback-driven search on an English looping problem.
 
-**Do adopt the diagnostic.** Free-generation en/ett mismatch and offset-free gender AUC are cheap, judge-free, and sensitive. Base Qwen3.5-0.8B fails about 1 noun phrase in 8. Add both to the SE.LLMA eval suite, split by token count.
+**One bounded exception is worth a small check, not a program.** A dev-selected rank-1 edit within a 1% perplexity budget cut chat-mode en/ett errors from 9.3% to 3.5% on new prompts. Before treating it as a usable patch, three checks are needed:
+- human grammar and fluency review of the edited output,
+- a second model,
+- other Swedish tasks in chat mode.
+
+**Do adopt the diagnostic.** Free-generation en/ett mismatch and offset-free gender AUC are cheap, judge-free, and sensitive. The Qwen3.5-0.8B chat model fails about 1 noun phrase in 10 on 200 prompts. Add both to the SE.LLMA eval suite, split by token count. Run them on both the pretrained and the post-trained checkpoint of any candidate base model, because post-training can cost Swedish grammar.
 
 **Most informative follow-up.** Run the same diagnostic and the same edit on Qwen3.5-0.8B before and after a small Swedish continued-pretraining run, about 100M FineWeb-2 Swedish tokens on one GPU. This answers three questions in one run:
 1. Does Swedish data fix gender? That would be the "ability added by data" case.
 2. Is the gain concentrated in multi-token nouns? That would make the tokenizer the root cause.
 3. Does any edit still add value on top of continued pretraining? That decides whether editing has any place in the pipeline.
 
-A second, cheaper option is to let a frontier LLM write the `w, r` vectors from `results/probe.json` and the layer-22 weights. It would be scored by the same harness, which closes the gap to the paper's actual setup.
+Two cheaper options:
+- **Interpolate toward the pretrained weights.** Move selected late-layer matrices of the chat model part of the way toward `-Base`, and score with this harness. It is the weight edit with the strongest prior, since the pretrained checkpoint already has the ability.
+- **Frontier LLM as the "programmer".** Let a frontier LLM write the `w, r` vectors from `results/probe.json` and the layer-22 weights. It would be scored by the same harness, which closes the gap to the paper's actual setup.
